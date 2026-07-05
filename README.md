@@ -47,7 +47,7 @@ Student-Performance-AI/
 ## ⚙️ Installation
 
 ```bash
-git clone https://github.com/<your-username>/Student-Performance-AI.git
+git clone https://github.com/<khushdutt149-del>/Student-Performance-AI.git
 cd Student-Performance-AI
 pip install -r requirements.txt
 ```

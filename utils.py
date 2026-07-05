@@ -41,7 +41,7 @@ REASON_OPTIONS = ["home", "reputation", "course", "other"]
 GUARDIAN_OPTIONS = ["mother", "father", "other"]
 YES_NO_OPTIONS = ["yes", "no"]
 
-MODEL_FILENAME = "student_performance_pipeline (1).pkl"
+MODEL_FILENAME = "student_performance_pipeline.pkl"
 
 ALL_FEATURE_COLUMNS = [
     "school", "sex", "age", "address", "famsize", "Pstatus",

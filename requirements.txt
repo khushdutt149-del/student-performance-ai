@@ -1,9 +1,25 @@
-streamlit==1.38.0
-pandas==2.2.2
-numpy==1.26.4
-scikit-learn==1.6.1
-joblib==1.4.2
-plotly==5.24.1
-matplotlib==3.9.2
-reportlab==4.2.2
-fpdf2==2.7.9
+# requirements.txt
+# AI Student Performance Dashboard
+#
+# Version bounds (not exact pins) are used deliberately so pip can select
+# prebuilt wheels for whichever Python version Streamlit Community Cloud
+# actually provisions. Exact old pins (pandas==2.2.2, reportlab==4.2.2 ->
+# pillow==10.4.0) forced source builds on Python 3.14, which is what
+# caused the hang/failure.
+#
+# matplotlib and fpdf2 removed: unused by this project.
+# dashboard.py is Plotly-only, report.py is ReportLab-only.
+#
+# scikit-learn is pinned close to what 02_Model_trainig.ipynb likely used.
+# If loading the pipeline throws a version-mismatch warning/error, check
+# `import sklearn; print(sklearn.__version__)` in that notebook's Colab
+# environment and match it exactly here.
+
+streamlit>=1.38,<2.0
+pandas>=2.2,<3.0
+numpy>=1.26,<3.0
+scikit-learn>=1.6,<2.0
+joblib>=1.4,<2.0
+plotly>=5.22,<6.0
+reportlab>=4.2,<5.0
+pillow>=10.4

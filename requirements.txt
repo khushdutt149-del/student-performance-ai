@@ -1,22 +1,3 @@
-# requirements.txt
-# AI Student Performance Dashboard
-#
-# Version bounds (not exact pins) are used deliberately so pip can select
-# prebuilt wheels for whichever Python version Streamlit Community Cloud
-# actually provisions. Exact old pins (pandas==2.2.2, reportlab==4.2.2 ->
-# pillow==10.4.0) forced source builds on Python 3.14, which is what
-# caused the hang/failure.
-#
-# matplotlib and fpdf2 removed: unused by this project.
-# dashboard.py is Plotly-only, report.py is ReportLab-only.
-#
-# scikit-learn MUST be pinned EXACTLY to the version used to train and
-# pickle student_performance_pipeline.pkl (1.6.1, confirmed). Unlike most
-# packages here, ColumnTransformer pickles are NOT forward-compatible
-# across scikit-learn minor versions - loading a 1.6.1 pickle with 1.7.x
-# raises: AttributeError: module 'sklearn.compose._column_transformer'
-# has no attribute '_RemainderColsList'. Do not loosen this pin.
-
 streamlit>=1.38,<2.0
 pandas>=2.2,<3.0
 numpy>=1.26,<3.0

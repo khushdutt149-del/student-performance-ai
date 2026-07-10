@@ -10,15 +10,17 @@
 # matplotlib and fpdf2 removed: unused by this project.
 # dashboard.py is Plotly-only, report.py is ReportLab-only.
 #
-# scikit-learn is pinned close to what 02_Model_trainig.ipynb likely used.
-# If loading the pipeline throws a version-mismatch warning/error, check
-# `import sklearn; print(sklearn.__version__)` in that notebook's Colab
-# environment and match it exactly here.
+# scikit-learn MUST be pinned EXACTLY to the version used to train and
+# pickle student_performance_pipeline.pkl (1.6.1, confirmed). Unlike most
+# packages here, ColumnTransformer pickles are NOT forward-compatible
+# across scikit-learn minor versions - loading a 1.6.1 pickle with 1.7.x
+# raises: AttributeError: module 'sklearn.compose._column_transformer'
+# has no attribute '_RemainderColsList'. Do not loosen this pin.
 
 streamlit>=1.38,<2.0
 pandas>=2.2,<3.0
 numpy>=1.26,<3.0
-scikit-learn>=1.6,<2.0
+scikit-learn==1.6.1
 joblib>=1.4,<2.0
 plotly>=5.22,<6.0
 reportlab>=4.2,<5.0
